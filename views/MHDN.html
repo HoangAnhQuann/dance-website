@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Language" content="en">
+        <meta name="keywords" content="Khiêu vũ thể thao, thông tin giải đấu, đăng ký thi đấu online" />
+        <meta name="description" content="Khiêu vũ thể thao, thông tin giải đấu, đăng ký thi đấu online" />
+        <meta name="robots" content="index,follow,noodp" />
+        <link rel="shortcut icon" href="logo.jpg"/>
+        <title>Khiêu vũ thể thao</title>
+        <link href="css/newmain.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/boostrap3.3.6/bootstrap.min.css">
+        <style>
+            .main-content{margin: 10px 0; min-height: calc(100vh - 180px) !important; display: flex}
+            #frmLogin{text-align:center !important; margin: auto}
+            #frmLogin input{margin-bottom:5px !important;padding-left: 5px;}
+        </style>
+    </head>
+<body>
+    <div class="main-div">
+        <div class="header public clearfix">
+    <div class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header ">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="http://vndancesport.com/"><img id="banner-img" src="css/images/banner.jpg"/></a>
+            </div>
+            <div class="navbar-collapse collapse" style="height:1px">
+                <ul class="nav navbar-nav">
+                    <li><a id="homepage" href="http://vndancesport.com/index.html">Trang chủ</a></li>
+                    <li><a href="http://vndancesport.com/danh-sach-giai-dau">Đăng ký thi đấu</a></li>
+                    <li><a href="http://dangnhap.vndancesport.com/">Đăng nhập</a></li>
+                    <li><a href="http://vndancesport.com/final.html">Kết quả chung kết</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Mục khác <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="http://vndancesport.com/dang-ky">Đăng ký tài khoản</a></li>
+                            <li><a href="http://vndancesport.com/trung-tam-nang-khieu-sonata-page-1">Trung tâm năng khiếu Sonata</a></li>
+                            <li><a href="http://vndancesport.com/music.html">Nhạc online</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>        <div class="main-content">
+            <form id="frmLogin" method="post">
+                <input id="txtUsername" name="txtUsername" placeholder="Tên đăng nhập"/>
+                <br>
+                <input id="txtPassword" name="txtPassword" placeholder="Mật khẩu" type="password"/>
+                <br>
+                <input id="btLogon" type="image" src="images/login.gif" />
+                <br>
+                <span id="messageLogin" style="color: red"></span>
+                <div><a href="http://vndancesport.com/forget-password.html">Quên mật khẩu</a></div>
+            </form>
+        </div>
+        <h1 style="display: none">Khiêu vũ thể thao, thông tin giải đấu, đăng ký thi đấu online, khieu vu the thao, giai khieu vu, giải khiêu vũ, dance sport, nhảy nghệ thuật</h1>
+<h2 style="display: none">Khiêu vũ thể thao, thông tin giải đấu, đăng ký thi đấu online, khieu vu the thao, giai khieu vu, giải khiêu vũ, dance sport, nhảy nghệ thuật</h2>
+<div id="footer">
+    Khiêu vũ thể thao. Thông tin giải đấu. Đăng ký thi đấu online.<br>
+    Copyright © 2016. Bản quyền thuộc vndancesport.com.
+</div>        </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="css/boostrap3.3.6/bootstrap.min.js"></script>
+    <script src="js/bootbox.min.js"></script>
+    <script src="js/jquery-1.4.4.js"></script>
+    <script>
+        $(document).ready(function(){
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-82839639-1', 'auto');
+            ga('send', 'pageview');
+        
+            $('#frmLogin #txtPassword').val('');
+            $('#frmLogin #txtUsername').val('');
+
+            $('#frmLogin #btLogon').click(function(){
+                var pass = $('#frmLogin #txtPassword').val();
+                if (pass.length != 32 && pass != '')
+                {
+                    $('#frmLogin #txtPassword').val(hex_md5(pass));
+                }
+
+                $.ajax({
+                    url : "?call=auth.login",
+                    type : 'POST',
+                    dataType : 'script',
+                    data : $('#frmLogin').serializeArray(),
+                    success : function(rs){
+                        if(rs == 1){
+                            $('#txtUsername').focus();
+                            $("#messageLogin").html("Bạn chưa điền tên đăng nhập.");
+                        }
+                        
+                        if(rs == 2){
+                            $('#txtUsername').focus();
+                            $("#messageLogin").html("Tên đăng nhập không tồn tại.");
+                        }
+                        
+                        if(rs == 3){
+                            $('#txtUsername').focus();
+                            $("#messageLogin").html("Tài khoản đã bị khóa.");
+                        }
+                        
+                        if(rs == 4){
+                            $('#txtPassword').focus();
+                            $("#messageLogin").html("Bạn chưa điền mật khẩu.");
+                        }
+                        
+                        if(rs == 5){
+                            $('#txtPassword').focus();
+                            $("#messageLogin").html("Mật khẩu không đúng.");
+                        }
+                    }
+                });                  
+                return false;
+            });
+        });
+    </script>
+</body>
+</html>

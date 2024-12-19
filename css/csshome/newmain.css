@@ -1,0 +1,255 @@
+html {
+    height: inherit !important;
+    background-color: #51d469 !important;
+}
+
+body {
+    background-color: #51d469 !important;
+    font-size: 15px !important;
+}
+
+a {
+    font-size: 15px !important;
+}
+
+.elfinder-tree .elfinder-navbar-root .elfinder-navbar-icon {
+    background-position: 0 -16px !important;
+}
+
+.main-div {
+    max-width: 970px;
+    margin: auto;
+    background-color: white;
+}
+
+.bx-wrapper {
+    margin-bottom: 40px !important;
+    border-top: 1px solid #3498db !important;
+}
+
+.bx-wrapper .bx-pager {
+    margin-top: -50px !important;
+    position: relative !important;
+    padding-top: 0px !important;
+}
+
+.bx-wrapper .bx-viewport {
+    left: 0px !important;
+}
+
+.quangcao .bx-viewport {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 104% !important;
+    height: auto !important;
+    max-height: 148px;
+}
+
+.quangcao {
+    margin-top: 10px;
+    margin-bottom: -30px;
+}
+
+.bx-controls-direction a,
+.bx-pager-item a {
+    opacity: 0;
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+}
+
+.bx-wrapper:hover .bx-controls-direction a,
+.bx-wrapper:hover .bx-pager-item a {
+    opacity: 1;
+}
+
+#footer {
+    color: White;
+    font-size: 17px;
+    font-family: Times New Roman;
+    text-align: left;
+    margin: auto;
+    background-color: #0a6b6b;
+    max-width: 980px;
+    line-height: 100%;
+    height: 80px;
+    padding: 3px;
+}
+
+.row {
+    max-width: 960px !important;
+    margin: auto !important;
+}
+
+.grouptitle {
+    color: #9f224e;
+    font-weight: bold;
+    font-size: 19px;
+    margin-left: -10px;
+    cursor: pointer;
+}
+
+.giaidautitle {
+    color: darkblue;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.giaidau {
+    padding: 3px;
+    margin-bottom: 5px;
+    background: aliceblue;
+    margin-left: -10px;
+    width: 104%;
+}
+
+.logo {
+    width: 310px;
+    background-image: url("images/banner.jpg");
+    background-repeat: no-repeat;
+    height: 80px !important;
+}
+
+.header {
+    max-height: 80px !important;
+    height: 80px !important;
+    background: white !important;
+    z-index: 9 !important;
+}
+
+.menu {
+    margin-top: 15px !important;
+}
+
+.menu>a {
+    font-weight: bold !important;
+}
+
+.menu>a:hover,
+.menu>a:visited {
+    box-shadow: none !important;
+}
+
+.col-sm-5>ul>li {
+    list-style-type: circle !important;
+    margin-left: -30px !important;
+    margin-bottom: 5px !important;
+}
+
+#txtTraCuu {
+    border: solid 1px #9e5983;
+    width: 200px;
+    height: 30px;
+    margin-right: 5px;
+    padding: 3px;
+}
+
+#cboGiaiDau {
+    border: solid 1px #9e5983;
+    width: 200px;
+    height: 30px;
+    margin-right: 5px;
+    padding: 3px;
+}
+
+#div-tracuu {
+    text-align: center;
+    padding: 5px 0px 5px 0px;
+    border-bottom: 1px solid #bbadad;
+    border-top: 1px solid #bbadad;
+    margin-bottom: 5px;
+}
+
+#btnTraCuu {
+    background-color: #258429;
+    border: none;
+    color: white;
+    padding: 5px 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 3px;
+}
+
+#frmRegister {
+    margin: auto;
+    padding: 10px !important;
+    max-width: 300px;
+}
+
+@media only screen and (max-width:768px) {
+    #banner-img {
+        margin-top: 5px;
+        max-width: 260px !important;
+        height: auto !important;
+        background-repeat: no-repeat !important;
+    }
+
+    .navbar-nav {
+        position: relative;
+        z-index: 1;
+        background-color: #f0f0f0;
+        margin: 0px -15px !important;
+    }
+
+    .navbar-collapse {
+        float: right;
+        margin-top: -30px;
+    }
+
+    .icon-bar {
+        width: 25px !important;
+        background-color: darkblue !important;
+        margin-top: 6px !important
+    }
+
+    #homepage {
+        margin-top: -9px;
+    }
+
+    .quangcao .bx-viewport {
+        padding-left: 5px;
+        padding-right: 5px;
+        width: 100% !important;
+    }
+
+    .container {
+        padding: 0px 15px;
+    }
+
+    .nav>li {
+        margin-top: -3px;
+        border-top: 1px solid #3498db;
+    }
+}
+
+@media only screen and (max-width:325px) {
+    #txtTraCuu {
+        margin-top: 3px
+    }
+}
+
+@media only screen and (min-width:769px) {
+    .navbar-nav {
+        margin-top: 15px !important
+    }
+
+    .navbar-collapse {
+        padding-right: 0px !important
+    }
+}
+
+.navbar-inverse {
+    background-color: white !important;
+    border-color: white !important;
+}
+
+.open {
+    background-color: #f5f5f5 !important
+}
+
+.dropdown-menu>li {
+    border-top: 1px solid #3498db;
+    text-align: right
+}
